@@ -14,18 +14,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Get next version
-        uses: reecetech/version-increment@2024.10.1
-        id: version
-        with:
-          scheme: semver
-          increment: patch
-
       - uses: r-lib/actions/setup-r@v2
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: any::desc
           needs: check
+
+      - name: Retrieve current version number
+        run: |
+          desc::desc_get_version()
+        shell: Rscript {0}
+        value: ${{ steps.run.outputs.out }}
+
+      - name: Get next version
+        uses: reecetech/version-increment@2024.10.1
+        id: ${{ steps.run.outputs.out }}
+        with:
+          scheme: semver
+          increment: patch
+
+
 
       - name: Update Description file
         run: |
