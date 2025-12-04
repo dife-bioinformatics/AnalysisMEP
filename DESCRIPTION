@@ -1,0 +1,37 @@
+Package: RAnalysisMEP
+Title: Creates standardised Analysis Project Setup in R
+Version: 0.0.0.9001
+Authors@R: 
+    c(person(given = "Florian", 
+             family = "Schwarz",
+             role = c("aut", "cre"),
+             email = "Florian.Schwarz@dife.de",
+             comment = c(ORCID = "0000-0002-1088-4773")),
+      person(given = "Fabian", 
+             family = "Eichelmann",
+             role = "aut",
+             email = "Fabian.Eichelmann@dife.de"),
+      person(given = "Olga", 
+             family = "Kuxhaus",
+             role = "aut",
+             email = "Olga.Kuxhaus@dife.de"))
+Description: This package is made for internal use within the MEP department of
+    the German Institute of Human Nutrition Potsdam-Rehbruecke. It contains functions
+    for a standardised setup of R projects for research analyses as well as
+    some functions often used.
+License: Copyright {2025} {German Institute of Human Nutrition Potsdam-Rehbruecke}
+Imports:
+    renv,
+    usethis,
+    fs,
+    tibble,
+    dplyr,
+    tidyr,
+    purrr,
+    here,
+    stringr,
+    remotes
+Remotes:
+Encoding: UTF-8
+Roxygen: list(markdown = FALSE)
+RoxygenNote: 7.3.3
