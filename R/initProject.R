@@ -26,8 +26,6 @@ initProject <- function(location = NULL){
   dir.create(paste0(location, "/results"))
   dir.create(paste0(location, "/results/tables"))
   dir.create(paste0(location, "/results/figures"))
-  dir.create(paste0(location, "/utils"))
-  dir.create(paste0(location, "/utils/data_dictionary"))
 
   #### copies over standardised R scripts for start
   file.copy(from = find_script("scripts/main.R"),
