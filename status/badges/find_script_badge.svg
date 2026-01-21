@@ -1,0 +1,14 @@
+<svg width="101" height="20" viewBox="0 0 1010 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="find_script: 0 %">
+  <title>find_script: 0 %</title>
+  <g>
+    <rect fill="#555" width="681" height="200"/>
+    <rect fill="#E43" x="681" width="329" height="200"/>
+  </g>
+  <g aria-hidden="true" fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
+    <text x="60" y="148" textLength="581" fill="#000" opacity="0.1">find_script</text>
+    <text x="50" y="138" textLength="581">find_script</text>
+    <text x="736" y="148" textLength="229" fill="#000" opacity="0.1">0 %</text>
+    <text x="726" y="138" textLength="229">0 %</text>
+  </g>
+  
+</svg>
