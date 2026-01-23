@@ -5,9 +5,11 @@ name: Update-Description-Version
 on:
   pull_request:
     branches: [main]
+    types: [closed]
 
 jobs:
   Version-Update:
+    if: github.event.pull_request.merged
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -45,4 +47,10 @@ jobs:
           git commit -am "chore: Updated package version"
           git push
 
-
+      - name: Repository Dispatch
+        if: steps.verify-changed-files.outputs.files_changed == 'true'
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.MEP_Package_Update }}
+          repository: dife-bioinformatics/AnalysisMEP
+          event-type: release_version_update
