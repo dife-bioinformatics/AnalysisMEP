@@ -1,6 +1,6 @@
 Package: AnalysisMEP
 Title: Creates standardised Analysis Project Setup in R
-Version: 0.0.2
+Version: 0.0.1
 Authors@R: 
     c(person(given = "Florian", 
              family = "Schwarz",
