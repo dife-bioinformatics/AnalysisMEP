@@ -1,10 +1,8 @@
-#### GitHub Actions to check whether package can be built as is
+#### GitHub Action to increment the public-facing version based on semantic versioning
 
 name: Update-Description-Version
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 
@@ -25,7 +23,6 @@ jobs:
         id: version
         with:
           scheme: semver
-          increment: patch
 
 
       - name: Update Description file
@@ -48,11 +45,4 @@ jobs:
           git commit -am "chore: Updated package version"
           git push
 
-      - name: Repository Dispatch
-        if: steps.verify-changed-files.outputs.files_changed == 'true'
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.MEP_Package_Update }}
-          repository: dife-bioinformatics/AnalysisMEP
-          event-type: version_update
 

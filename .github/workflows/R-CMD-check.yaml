@@ -5,22 +5,22 @@ name: R-CMD-check
 on:
   schedule:
     - cron: '15 7 * * 1'
-  repository_dispatch:
-    types: [version_update]
+  pull_request:
+    branches: [main, dev]
+  push:
+    branches: [dev]
 
 jobs:
   R-CMD-check:
     runs-on: ${{ matrix.config.os }}
-
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
 
     strategy:
       fail-fast: false
       matrix:
         config:
-          # Test the package on Linux OS, latest R and current server R version
           - {os: ubuntu-latest,   r: 'release'}
-          - {os: ubuntu-latest,   r: '4.3.0'}
+          - {os: ubuntu-18.04,   r: '4.3.0'}
           - {os: windows-latest,   r: 'release'}
 
     env:
