@@ -5,7 +5,8 @@ name: Code Coverage
 on:
   pull_request:
     branches: [main, dev]
-
+  push:
+    branches: [dev]
 jobs:
   Badges:
     runs-on: ubuntu-latest
