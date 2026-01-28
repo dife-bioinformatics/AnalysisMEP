@@ -47,10 +47,13 @@ jobs:
           git commit -am "chore: Updated package version"
           git push
 
-      - name: Repository Dispatch
-        if: steps.verify-changed-files.outputs.files_changed == 'true'
-        uses: peter-evans/repository-dispatch@v3
+
+      - name: Create a release
+        uses: elgohr/Github-Release-Action@v5
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          token: ${{ secrets.MEP_Package_Update }}
-          repository: dife-bioinformatics/AnalysisMEP
-          event-type: release_version_update
+          title: ${{ steps.version.outputs.version }}
+          tag: ${{ steps.version.outputs.version }}
+
+
