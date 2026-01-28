@@ -16,11 +16,11 @@ functions_test <- stringr::str_remove(string = functions_R_folder,
                                       pattern = ".R")
 
 function_badges_block <- c()
-function_badges_block[1:(2*length(functions_test))] <- ""
+function_badges_block[1:(2*length(functions_test)+1)] <- ""
 
 for (i in 1:length(functions_test)){
 
-  function_badges_block[(i-1)*2+1] <- paste0("![",functions_test[i],"](status/badges/",functions_test[i],"_badge.svg)")
+  function_badges_block[(i-1)*2+2] <- paste0("![",functions_test[i],"](status/badges/",functions_test[i],"_badge.svg)")
 
 }
 
