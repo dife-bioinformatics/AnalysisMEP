@@ -1,6 +1,6 @@
 
 library(badgen)
-library(tidyverse)
+library(dplyr)
 
 coverage_functions_detailed <- as.data.frame(covr::package_coverage())
 
