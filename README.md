@@ -1,4 +1,3 @@
-## Status
 ![Check_LastTest](status/badges/check_lasttest_badge.svg)
 [![R-CMD-check](https://github.com/dife-bioinformatics/AnalysisMEP/actions/workflows/R-CMD-check.yaml/badge.svg?branch=dev)](https://github.com/dife-bioinformatics/AnalysisMEP/actions/workflows/R-CMD-check.yaml)
 [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
