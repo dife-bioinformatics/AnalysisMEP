@@ -18,7 +18,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::covr, any::badgen, any::dplyr
+          extra-packages: any::covr, any::badgen, any::dplyr, any::here, any::stringr
           needs: check
 
       - name: Calculate Code Coverage
