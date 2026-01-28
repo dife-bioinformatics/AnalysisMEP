@@ -7,7 +7,9 @@
 The following percentages of code were covered during testing:
 
 ![find_script](status/badges/find_script_badge.svg)
+
 ![initProject](status/badges/initProject_badge.svg)
+
 
 End of code coverage report.
 </details>
