@@ -9,12 +9,10 @@ Authors@R:
              comment = c(ORCID = "0000-0002-1088-4773")),
       person(given = "Fabian", 
              family = "Eichelmann",
-             role = "aut",
-             email = "Fabian.Eichelmann@dife.de"),
+             role = "aut"),
       person(given = "Olga", 
              family = "Kuxhaus",
-             role = "aut",
-             email = "Olga.Kuxhaus@dife.de"))
+             role = "aut"))
 Description: This package is made for internal use within the MEP department of
     the German Institute of Human Nutrition Potsdam-Rehbruecke. It contains 
     functions for a standardised setup of R projects for research analyses as 
