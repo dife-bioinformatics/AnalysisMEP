@@ -5,7 +5,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": 'Rscript -e 'desc::desc_set_version(version = "${nextRelease.version}")'''
+        "prepareCmd": "Rscript -e 'desc::desc_set_version(version = \"${nextRelease.version}\")'"
       }
     ],
     "@semantic-release/git",
