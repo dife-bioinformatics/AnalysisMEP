@@ -7,8 +7,7 @@ on:
     - cron: '15 7 * * 1'
   pull_request:
     branches: [main, dev]
-  push:
-    branches: [dev]
+
 jobs:
   R-CMD-check:
     runs-on: ${{ matrix.config.os }}
@@ -39,7 +38,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck, any::covr, any::remotes
+          extra-packages: any::rcmdcheck, any::covr, any::stringr
           needs: check
 
       - uses: r-lib/actions/check-r-package@v2
