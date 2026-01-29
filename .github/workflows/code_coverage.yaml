@@ -8,8 +8,20 @@ on:
     types: [closed]
 
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      condition: ${{ steps.condition.outputs.condition }}
+    steps:
+      - id: condition
+        run: |
+          if [[ ${{ github.head_ref }} == *"main"* ]]; then
+             echo "condition=false" >> $GITHUB_OUTPUT
+          else
+             echo "condition=true" >> $GITHUB_OUTPUT
+          fi
   Badges:
-    if: github.event.pull_request.merged
+    if: ${{ (github.event.pull_request.merged) && (needs.setup.outputs.condition) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
