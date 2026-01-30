@@ -4,3 +4,7 @@
 ^\.github$
 ^\.git$
 ^status$
+^semantic_release\.txt$
+^package-lock\.json$
+^package\.json$
+^.releaserc\.json$
