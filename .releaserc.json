@@ -10,10 +10,12 @@
         "prepareCmd": "Rscript -e 'desc::desc_set_version(version = \"${nextRelease.version}\")'"
       }
     ],
-    "@semantic-release/git",
+    [
+      "@semantic-release/git",
       {
         "message": "chore(release): set Description file to ${nextRelease.version}"
       }
+    ],
     [
       "@semantic-release/github",
       {
