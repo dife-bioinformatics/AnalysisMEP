@@ -5,14 +5,14 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "R.exe -e 'desc::desc_set_version(version = as.character(${nextRelease.version}))'"
+        "prepareCmd": "Rscript -e 'desc::desc_set_version(version = \"${nextRelease.version}\")'"
       }
     ],
     "@semantic-release/git",
     [
       "@semantic-release/github",
       {
-        "draftRelease": "true"
+        "draftRelease": true
       }
     ]
   ],

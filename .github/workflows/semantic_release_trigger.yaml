@@ -1,7 +1,7 @@
 #### GitHub Action to increment the public-facing version based on semantic versioning v2
 
 
-name: Release
+name: Trigger for Release
 on:
   push:
     paths:
