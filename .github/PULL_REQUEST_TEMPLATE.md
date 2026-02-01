@@ -1,6 +1,7 @@
 ## Instructions & checklist for PR author
+This pull request template is primarily used for PR's into the dev branch.
 
-### Contents of this pull request (tick appropriate)
+### Contents of this pull request (mark appropriate)
 - [ ] Bug fix
 - [ ] New or modified feature
 - [ ] Deleted feature
