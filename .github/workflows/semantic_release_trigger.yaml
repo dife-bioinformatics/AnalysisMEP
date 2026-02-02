@@ -3,9 +3,10 @@
 
 name: Trigger for Release
 on:
-  push: [main]
-    paths:
-      - semantic_release.txt
+  push:
+    branches: [main]
+      paths:
+        - semantic_release.txt
 
 jobs:
   release:
