@@ -27,34 +27,33 @@ initProject <- function(location = NULL){
   dir.create(paste0(location, "/results"))
   dir.create(paste0(location, "/results/tables"))
   dir.create(paste0(location, "/results/figures"))
+  dir.create(paste0(location, "/R/utils"))
 
   #### copies over standardised R scripts for start
-  file.copy(from = find_script("scripts/main.R"),
-            to = paste0(location, "/R/main.R"))
-  file.copy(from = find_script("scripts/01_dataManagement.R"),
-            to = paste0(location, "/R/01_dataManagement.R"))
-  file.copy(from = find_script("scripts/02_qualityCheck.R"),
-            to = paste0(location, "/R/02_qualityCheck.R"))
+  file.copy(from = find_script("scripts/01_data_management.R"),
+            to = paste0(location, "/R/01_data_management.R"))
+  file.copy(from = find_script("scripts/example_script.R"),
+            to = paste0(location, "/R/02_example.R"))
   file.copy(from = find_script("scripts/custom_functions.R"),
-            to = paste0(location, "/R/custom_functions.R"))
+            to = paste0(location, "/R/utils/custom_function_example.R"))
 
 
   #### copies over placeholder files to keep folder structure in place for GitHub
   #### for folders that should not be shared (e.g. results)
   file.copy(from = find_script("utils/placeholder.txt"),
-            to = paste0(location, "/results/tables/placeholder.txt"))
+            to = paste0(location, "/results/tables/aim_for_machine_readable.txt"))
   file.copy(from = find_script("utils/placeholder.txt"),
-            to = paste0(location, "/results/figures/placeholder.txt"))
+            to = paste0(location, "/results/figures/aim_for_png.txt"))
   file.copy(from = find_script("utils/placeholder.txt"),
-            to = paste0(location, "/data/placeholder.txt"))
+            to = paste0(location, "/data/all_processed_data.txt"))
   file.copy(from = find_script("utils/placeholder.txt"),
-            to = paste0(location, "/data-raw/placeholder.txt"))
+            to = paste0(location, "/data-raw/only_raw_data.txt"))
 
   #### copies over initial config.yml file
   #### not sure if we should keep this but it is extremely helpful for checking out to improve figures
   #### could be used to determine the theme in ggplot e.g.
   #### could also be used in connection with how to flexibly merge plots together into one figure
-  #### schriftarten
+  #### set fixed fonts throughout
   file.copy(from = find_script("utils/config.yml"),
             to = paste0(location, "/config.yml"))
 
@@ -86,8 +85,7 @@ initProject <- function(location = NULL){
   usethis::write_over(path = paste0(location, "/.Renviron"),
                       lines = r_environ_lines)
 
-  r_profile_lines <- c("source(\"renv/activate.R\")",
-                       "source(\"R/custom_functions.R\")")
+  r_profile_lines <- c("source(\"renv/activate.R\")")
 
   usethis::write_over(path = paste0(location, "/.Rprofile"),
                       lines = r_profile_lines)
