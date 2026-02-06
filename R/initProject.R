@@ -93,5 +93,5 @@ initProject <- function(location = NULL){
   renv::init(project = location,
              load = FALSE)
 
-
+  renv::install()
 }
