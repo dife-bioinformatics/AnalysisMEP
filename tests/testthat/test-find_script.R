@@ -4,15 +4,14 @@ test_that("find script", {
   package <- "AnalysisMEP"
   test_name <- "testproj-456"
   tmp_path <- fs::path_temp()
-  tmp_path_to_proj <- AnalysisMEP::initProject(path = tmp_path, name = test_name)
+  tmp_path_to_proj <- AnalysisMEP::initialize_project(path = tmp_path, name = test_name)
 
-  script_name1 <- "scripts/main.R"
-  script_name2 <- "scripts/01_dataManagement.R"
-  script_name3 <- "scripts/02_qualityCheck.R"
-  script_name4 <- "scripts/custom_functions.R"
-  script_name5 <- "utils/config.yml"
-  script_name6 <- "utils/placeholder.txt"
-  script_name7 <- "utils/README.md"
+  script_name1 <- "scripts/01_data_management.R"
+  script_name2 <- "scripts/example_script.R"
+  script_name3 <- "scripts/custom_functions.R"
+  script_name4 <- "utils/config.yml"
+  script_name5 <- "utils/placeholder.txt"
+  script_name6 <- "utils/README.md"
 
   testthat::expect_no_error(AnalysisMEP:::find_script(script_name = script_name1))
   testthat::expect_no_error(AnalysisMEP:::find_script(script_name = script_name2))
@@ -20,10 +19,9 @@ test_that("find script", {
   testthat::expect_no_error(AnalysisMEP:::find_script(script_name = script_name4))
   testthat::expect_no_error(AnalysisMEP:::find_script(script_name = script_name5))
   testthat::expect_no_error(AnalysisMEP:::find_script(script_name = script_name6))
-  testthat::expect_no_error(AnalysisMEP:::find_script(script_name = script_name7))
 
   #### Testing when pathing goes wrong to the scripts / files
-  script_name_error <- "main.R"
+  script_name_error <- "01_data_management.R"
   error_message <- testthat::expect_error(AnalysisMEP:::find_script(script_name = script_name_error))
 
   #### Testing that the error message is consistent

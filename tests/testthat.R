@@ -9,4 +9,6 @@
 library(testthat)
 library(AnalysisMEP)
 
+#source(here::here("tests/testthat", "setup.R"))
+
 test_check("AnalysisMEP")

@@ -5,7 +5,7 @@ test_that("project setup structure", {
   #### Testing that all top-level folders and files are created as expected
   test_name <- "testproj-123"
   tmp_path <- fs::path_temp()
-  tmp_path_to_proj <- AnalysisMEP::initProject(path = tmp_path, name = test_name)
+  tmp_path_to_proj <- AnalysisMEP::initialize_project(path = tmp_path, name = test_name)
 
   file_structure_top <- fs::dir_ls(path = tmp_path_to_proj,
                                    all = TRUE)
@@ -46,7 +46,7 @@ test_that("project setup structure", {
 
 
   #### Testing whether the function stops when no name has been provided
-  error_message <- testthat::expect_error(AnalysisMEP::initProject(path = tmp_path))
+  error_message <- testthat::expect_error(AnalysisMEP::initialize_project(path = tmp_path))
 
   #### Testing that the error message is consistent
   testthat::expect_equal(error_message$message,
@@ -54,12 +54,15 @@ test_that("project setup structure", {
 
 
   #### Testing whether the function stops when it would overwrite a folder directory
-  error_message2 <- testthat::expect_error(AnalysisMEP::initProject(path = tmp_path, name = test_name))
+  error_message2 <- testthat::expect_error(AnalysisMEP::initialize_project(path = tmp_path, name = test_name))
 
-  #### Testing that the error message is consistent
-  testthat::expect_equal(error_message2$message,
-                         paste0("The path and name you have provided would overwrite an existing directory (", tmp_path_to_proj , "). Setup aborted."))
+  if(cfg_dir_overwrite){
 
+    #### Testing that the error message is consistent
+    testthat::expect_equal(error_message2$message,
+                           paste0("The path and name you have provided would overwrite an existing directory (", tmp_path_to_proj , "). Setup aborted."))
+
+  }
 
 })
 
