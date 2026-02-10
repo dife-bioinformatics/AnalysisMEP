@@ -43,20 +43,20 @@ initProject <- function(path = "home", name = NULL){
                           rstudio = TRUE)
 
   #### creates additional folder structure
-  dir.create(paste0(location, "/data"))
-  dir.create(paste0(location, "/data-raw"))
-  dir.create(paste0(location, "/results"))
-  dir.create(paste0(location, "/results/tables"))
-  dir.create(paste0(location, "/results/figures"))
-  dir.create(paste0(location, "/R/utils"))
+  dir.create(paste0(new_project_path, "/data"))
+  dir.create(paste0(new_project_path, "/data-raw"))
+  dir.create(paste0(new_project_path, "/results"))
+  dir.create(paste0(new_project_path, "/results/tables"))
+  dir.create(paste0(new_project_path, "/results/figures"))
+  dir.create(paste0(new_project_path, "/R/utils"))
 
   #### copies over standardised R scripts for start
   file.copy(from = find_script("scripts/01_data_management.R"),
-            to = paste0(location, "/R/01_data_management.R"))
+            to = paste0(new_project_path, "/R/01_data_management.R"))
   file.copy(from = find_script("scripts/example_script.R"),
-            to = paste0(location, "/R/02_example.R"))
+            to = paste0(new_project_path, "/R/02_example.R"))
   file.copy(from = find_script("scripts/custom_functions.R"),
-            to = paste0(location, "/R/utils/custom_function_example.R"))
+            to = paste0(new_project_path, "/R/utils/custom_function_example.R"))
 
   #### copies over README.md file to have a small description of the project / repo
   file.copy(from = find_script("utils/README.md"),
@@ -65,13 +65,13 @@ initProject <- function(path = "home", name = NULL){
   #### copies over placeholder files to keep folder structure in place for GitHub
   #### for folders that should not be shared (e.g. results)
   file.copy(from = find_script("utils/placeholder.txt"),
-            to = paste0(location, "/results/tables/aim_for_machine_readable.txt"))
+            to = paste0(new_project_path, "/results/tables/aim_for_machine_readable.txt"))
   file.copy(from = find_script("utils/placeholder.txt"),
-            to = paste0(location, "/results/figures/aim_for_png.txt"))
+            to = paste0(new_project_path, "/results/figures/aim_for_png.txt"))
   file.copy(from = find_script("utils/placeholder.txt"),
-            to = paste0(location, "/data/all_processed_data.txt"))
+            to = paste0(new_project_path, "/data/all_processed_data.txt"))
   file.copy(from = find_script("utils/placeholder.txt"),
-            to = paste0(location, "/data-raw/only_raw_data.txt"))
+            to = paste0(new_project_path, "/data-raw/only_raw_data.txt"))
 
   #### copies over initial config.yml file
   #### not sure if we should keep this but it is extremely helpful for checking out to improve figures
@@ -117,5 +117,4 @@ initProject <- function(path = "home", name = NULL){
   renv::init(project = new_project_path,
              load = FALSE)
 
-  renv::install()
 }
