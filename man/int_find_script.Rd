@@ -9,16 +9,18 @@ int_find_script(script_name, package = "mepr")
 \arguments{
 \item{script_name}{specifies which script is called.}
 
-\item{package}{is the name of the package where the scripts are included ("mepr").}
+\item{package}{name of the package where the scripts are included ("mepr").}
 }
 \value{
 the path of the script_name
 }
 \description{
-This is an internal function which will find the correct path for the scripts during project setup after installation.
+This is an internal function which will find the correct path
+for the scripts during project setup after installation.
 }
 \details{
-This function adapts the code from the internal function find_template from the \code{usethis::use_template} function.
+This function adapts the code from the internal function
+find_template from the \code{usethis::use_template} function.
 }
 \author{
 Florian Schwarz
