@@ -41,7 +41,8 @@ jobs:
           extra-packages: any::rcmdcheck, any::covr, any::stringr, any::config, any::here, any::rjson
           needs: check
 
-      - name: Create .Renviron file
+      - name: Create .Renviron file for Ubuntu
+        if: matrix.os == 'ubuntu-latest'
         run: |
           touch .Renviron
           echo R_CONFIG_ACTIVE = "github" >> .Renviron
