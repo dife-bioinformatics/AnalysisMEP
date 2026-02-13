@@ -49,6 +49,7 @@ initialize_project <- function(path = "home", name = NULL){
   dir.create(paste0(new_project_path, "/results/tables"))
   dir.create(paste0(new_project_path, "/results/figures"))
   dir.create(paste0(new_project_path, "/R/utils"))
+  dir.create(paste0(new_project_path, "/citations"))
 
   #### copies over standardised R scripts for start
   file.copy(from = find_script("scripts/01_data_management.R"),
@@ -72,6 +73,8 @@ initialize_project <- function(path = "home", name = NULL){
             to = paste0(new_project_path, "/data/all_processed_data.txt"))
   file.copy(from = find_script("utils/placeholder.txt"),
             to = paste0(new_project_path, "/data-raw/only_raw_data.txt"))
+  file.copy(from = find_script("utils/placeholder.txt"),
+            to = paste0(new_project_path, "/citations/citations_placeholder_file.txt"))
 
   #### copies over initial config.yml file
   #### not sure if we should keep this but it is extremely helpful for checking out to improve figures
@@ -114,6 +117,8 @@ initialize_project <- function(path = "home", name = NULL){
 
   usethis::write_over(path = paste0(new_project_path, "/.Rprofile"),
                       lines = r_profile_lines)
+
+  # renv::install("survival")
 
   renv::init(project = new_project_path,
              load = FALSE)

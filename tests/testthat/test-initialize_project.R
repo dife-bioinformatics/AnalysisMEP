@@ -14,6 +14,7 @@ test_that("project setup structure", {
                        #".Renviron",
                        ".Rprofile",
                        #"config.yml",
+                       "citations",
                        "data",
                        "data-raw",
                        "R",
