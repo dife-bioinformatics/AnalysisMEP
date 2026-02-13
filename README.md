@@ -38,7 +38,7 @@ relative to the home directory. If you want to set it up at a different location
 modify the path argument or include pathing as well in the name argument.
 
 ``` r
-mepr::init_project(name = "PXXXX_projectXYZ", path = "home")
+mepr::initialize_project(name = "PXXXX_projectXYZ", path = "home")
 ```
 
 
