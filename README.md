@@ -1,7 +1,8 @@
 # AnalysisMEP R package
 
 ![Last_Check](status/badges/check_lasttest_badge.svg)
-[![R-CMD-check](https://github.com/dife-bioinformatics/AnalysisMEP/actions/workflows/R-CMD-check.yaml/badge.svg?branch=dev)](https://github.com/dife-bioinformatics/AnalysisMEP/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/dife-bioinformatics/mepr/actions/workflows/R-CMD-check.yaml/badge.svg?branch=dev)](https://github.com/dife-bioinformatics/mepr/actions/workflows/R-CMD-check.yaml)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 
@@ -10,23 +11,23 @@
 
 ## Installation
 
-You can install the latest, stable version of AnalysisMEP from GitHub using the remotes package:
+You can install the latest, stable version of mepr from GitHub using the remotes package:
 
 
 ``` r
-remotes::install_github("dife-bioinformatics/AnalysisMEP")
+remotes::install_github("dife-bioinformatics/mepr")
 ```
 
 You can also specify a specific version of the package
 
 ``` r
 # Install v1.0.0 with the following
-remotes::install_github("dife-bioinformatics/AnalysisMEP@1.0.0")
+remotes::install_github("dife-bioinformatics/mepr@1.0.0")
 ```
 
 ## About
 
-The primary purpose of the R package AnalysisMEP is to provide researchers within the MEP department
+The primary purpose of the R package mepr is to provide researchers within the MEP department
 with a standardised R project organisation, thereby improving readability and support. Secondly, common 
 functions will be added over time that occur frequently in research projects.
 
@@ -37,7 +38,7 @@ relative to the home directory. If you want to set it up at a different location
 modify the path argument or include pathing as well in the name argument.
 
 ``` r
-AnalysisMEP::init_project(name = "project-XYZ", path = "home")
+mepr::init_project(name = "PXXXX_projectXYZ", path = "home")
 ```
 
 
