@@ -11,7 +11,7 @@
 #'
 
 
-find_script <- function(script_name, package = "AnalysisMEP"){
+find_script <- function(script_name, package = "mepr"){
   #usethis:::check_installed(package)
   path <- tryCatch(
     fs::path_package(package = package, "templates", script_name),

@@ -4,7 +4,7 @@
 \alias{find_script}
 \title{Internal Function for pathing of the standardised files and scripts}
 \usage{
-find_script(script_name, package = "AnalysisMEP")
+find_script(script_name, package = "mepr")
 }
 \arguments{
 \item{script_name}{specifies which script is called.}
