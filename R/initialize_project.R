@@ -1,6 +1,7 @@
 #'
 #' @title Function to initiate a new project
-#' @description The function will create a new analysis project with pre-specified folders and files
+#' @description The function will create a new analysis project with pre-specified folders and files.
+#' `r lifecycle::badge('experimental')`
 #' @details The function initiates folders and files that demonstrate good practise, such as R folder with R files
 #' in them. Furthermore, for the data, data-raw, results/figures and results/tables folders dummy files have been added
 #' to keep the folder structure when collaborating with others on GitHub because those folders have otherwise been set to
@@ -18,6 +19,8 @@
 #'
 
 initialize_project <- function(path = "home", name = NULL){
+
+  lifecycle::signal_stage(stage = "experimental")
 
   if(is.null(name)){
     stop("Please provide a path name for the project to be created.", call. = FALSE)
@@ -52,28 +55,28 @@ initialize_project <- function(path = "home", name = NULL){
   dir.create(paste0(new_project_path, "/citations"))
 
   #### copies over standardised R scripts for start
-  file.copy(from = find_script("scripts/01_data_management.R"),
+  file.copy(from = int_find_script("scripts/01_data_management.R"),
             to = paste0(new_project_path, "/R/01_data_management.R"))
-  file.copy(from = find_script("scripts/example_script.R"),
+  file.copy(from = int_find_script("scripts/example_script.R"),
             to = paste0(new_project_path, "/R/02_example.R"))
-  file.copy(from = find_script("scripts/custom_functions.R"),
+  file.copy(from = int_find_script("scripts/custom_functions.R"),
             to = paste0(new_project_path, "/R/utils/custom_function_example.R"))
 
   #### copies over README.md file to have a small description of the project / repo
-  file.copy(from = find_script("utils/README.md"),
+  file.copy(from = int_find_script("utils/README.md"),
             to = paste0(new_project_path, "/README.md"))
 
   #### copies over placeholder files to keep folder structure in place for GitHub
   #### for folders that should not be shared (e.g. results)
-  file.copy(from = find_script("utils/placeholder.txt"),
+  file.copy(from = int_find_script("utils/placeholder.txt"),
             to = paste0(new_project_path, "/results/tables/aim_for_machine_readable.txt"))
-  file.copy(from = find_script("utils/placeholder.txt"),
+  file.copy(from = int_find_script("utils/placeholder.txt"),
             to = paste0(new_project_path, "/results/figures/aim_for_png.txt"))
-  file.copy(from = find_script("utils/placeholder.txt"),
+  file.copy(from = int_find_script("utils/placeholder.txt"),
             to = paste0(new_project_path, "/data/all_processed_data.txt"))
-  file.copy(from = find_script("utils/placeholder.txt"),
+  file.copy(from = int_find_script("utils/placeholder.txt"),
             to = paste0(new_project_path, "/data-raw/only_raw_data.txt"))
-  file.copy(from = find_script("utils/placeholder.txt"),
+  file.copy(from = int_find_script("utils/placeholder.txt"),
             to = paste0(new_project_path, "/citations/citations_placeholder_file.txt"))
 
   #### copies over initial config.yml file

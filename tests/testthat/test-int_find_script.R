@@ -1,5 +1,5 @@
 
-test_that("find script", {
+test_that(".find script", {
 
   package <- "mepr"
   test_name <- "testproj-456"
@@ -13,16 +13,16 @@ test_that("find script", {
   script_name5 <- "utils/placeholder.txt"
   script_name6 <- "utils/README.md"
 
-  testthat::expect_no_error(mepr:::find_script(script_name = script_name1))
-  testthat::expect_no_error(mepr:::find_script(script_name = script_name2))
-  testthat::expect_no_error(mepr:::find_script(script_name = script_name3))
-  testthat::expect_no_error(mepr:::find_script(script_name = script_name4))
-  testthat::expect_no_error(mepr:::find_script(script_name = script_name5))
-  testthat::expect_no_error(mepr:::find_script(script_name = script_name6))
+  testthat::expect_no_error(mepr:::int_find_script(script_name = script_name1))
+  testthat::expect_no_error(mepr:::int_find_script(script_name = script_name2))
+  testthat::expect_no_error(mepr:::int_find_script(script_name = script_name3))
+  testthat::expect_no_error(mepr:::int_find_script(script_name = script_name4))
+  testthat::expect_no_error(mepr:::int_find_script(script_name = script_name5))
+  testthat::expect_no_error(mepr:::int_find_script(script_name = script_name6))
 
   #### Testing when pathing goes wrong to the scripts / files
   script_name_error <- "01_data_management.R"
-  error_message <- testthat::expect_error(mepr:::find_script(script_name = script_name_error))
+  error_message <- testthat::expect_error(mepr:::int_find_script(script_name = script_name_error))
 
   #### Testing that the error message is consistent
   testthat::expect_equal(error_message$message,

@@ -7,7 +7,7 @@
 initialize_project(path = "home", name = NULL)
 }
 \arguments{
-\item{path}{defaults to "home". The function uses the `fs::path_expand()` functionality to find the path
+\item{path}{defaults to "home". The function uses the \code{fs::path_expand()} functionality to find the path
 to the home directory using the tilde expression. When this argument is changed, it
 should be replaced with an absolute path.}
 
@@ -17,7 +17,8 @@ should be replaced with an absolute path.}
 A new project will be set up at the specified location (path + name) by the user.
 }
 \description{
-The function will create a new analysis project with pre-specified folders and files
+The function will create a new analysis project with pre-specified folders and files.
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
 \details{
 The function initiates folders and files that demonstrate good practise, such as R folder with R files
