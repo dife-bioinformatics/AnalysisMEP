@@ -1,4 +1,4 @@
-Package: AnalysisMEP
+Package: mepr
 Title: Creates standardised Analysis Project Setup in R
 Version: 0.0.4
 Authors@R: 
