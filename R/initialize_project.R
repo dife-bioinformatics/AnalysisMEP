@@ -71,6 +71,10 @@ initialize_project <- function(path = "home", name = NULL) {
             to = paste0(new_project_path,
                         "/R/02_example.R"))
 
+  file.copy(from = int_find_script("scripts/99_package_citations.R"),
+            to = paste0(new_project_path,
+                        "/R/99_package_citations.R"))
+
   file.copy(from = int_find_script("scripts/custom_functions.R"),
             to = paste0(new_project_path,
                         "/R/utils/custom_function_example.R"))
