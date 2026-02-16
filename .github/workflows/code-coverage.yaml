@@ -9,7 +9,7 @@ on:
 
 jobs:
   Badges:
-    if: ${{ (github.event.pull_request.merged) && ( github.head_ref != "main") }}
+    if: ${{ (github.event.pull_request.merged) && ( github.head_ref != *"main"*) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
