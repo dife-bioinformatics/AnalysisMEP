@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(AnalysisMEP)
+library(mepr)
 
-test_check("AnalysisMEP")
+test_check("mepr")

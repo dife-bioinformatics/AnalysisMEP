@@ -1,4 +1,4 @@
-Package: AnalysisMEP
+Package: mepr
 Title: Creates standardised Analysis Project Setup in R
 Version: 0.0.4
 Authors@R: 
@@ -23,13 +23,17 @@ Depends:
 Imports:
     renv,
     usethis,
-    fs
+    fs,
+    lifecycle
 Encoding: UTF-8
-Roxygen: list(markdown = FALSE)
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 URL: https://github.com/dife-bioinformatics/AnalysisMEP
 BugReports: https://github.com/dife-bioinformatics/AnalysisMEP/issues
 Suggests: 
     testthat (>= 3.0.0),
-    stringr
+    stringr, 
+    config,
+    here,
+    rjson
 Config/testthat/edition: 3

@@ -1,10 +1,10 @@
 #### GitHub Action to increment the public-facing version based on semantic versioning v2
 
-
 name: Release
 on:
-  repository_dispatch:
-    types: [semantic_release]
+  pull_request:
+    branches: [main]
+    types: [closed]
 
 jobs:
   release:
@@ -39,5 +39,5 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --dry-run
+        run: npx semantic-release
 

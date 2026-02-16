@@ -38,8 +38,24 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck, any::covr, any::stringr
+          extra-packages: any::rcmdcheck, any::covr, any::stringr, any::config, any::here, any::rjson
           needs: check
+
+      - name: Create .Renviron file for Ubuntu
+        if: matrix.config.os == 'ubuntu-latest'
+        run: |
+          touch .Renviron
+          echo R_CONFIG_ACTIVE = "github" >> .Renviron
+
+          echo "cat .Renviron"
+          cat .Renviron
+
+          echo "ls -a ."
+          ls -a .
+
+          echo "ls -a ${{ github.workspace }}"
+          ls -a ${{ github.workspace }}
+        shell: bash
 
       - uses: r-lib/actions/check-r-package@v2
         with:
