@@ -13,6 +13,7 @@
     [
       "@semantic-release/git",
       {
+        "assets": ["*.json", "DESCRIPTION"],
         "message": "chore(release): set Description file to ${nextRelease.version}"
       }
     ],
