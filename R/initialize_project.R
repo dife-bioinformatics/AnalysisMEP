@@ -2,6 +2,7 @@
 #' @title Function to initiate a new project
 #' @description The function will create a new analysis project with pre-
 #' specified folders and files.
+#' `r lifecycle::badge('experimental')`
 #' @details The function initiates folders and files that demonstrate good
 #' practise, such as R folder with R files in them. Furthermore, for the data,
 #' data-raw, results/figures and results/tables folders dummy files have been
@@ -25,7 +26,7 @@
 
 initialize_project <- function(path = "home", name = NULL) {
 
-  # lifecycle::signal_stage(stage = "experimental")
+  lifecycle::signal_stage(stage = "experimental", what = "initialize_project()")
 
   if (is.null(name)) {
     stop("Please provide a path name for the project to be created.",
