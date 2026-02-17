@@ -1,6 +1,6 @@
 Package: mepr
 Title: Creates standardised Analysis Project Setup in R
-Version: 0.0.4
+Version: 1.0.0
 Authors@R: 
     c(person(given = "Florian", 
              family = "Schwarz",
