@@ -20,7 +20,8 @@ A new project will be set up at the specified location
 }
 \description{
 The function will create a new analysis project with pre-
-specified folders and files.\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+specified folders and files.
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
 \details{
 The function initiates folders and files that demonstrate good
